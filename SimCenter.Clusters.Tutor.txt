@@ -1,6 +1,7 @@
 Running Jobs on SimCenter Clusters			Hao-Bo Guo, 5-8-18
 
-The main computer clusters @ SimCenter include qbert and ts117. Make sure the software that you want to use has been pre-installed (ask Dr. Ethan Hereth) on the cluster that you want to run job at. 
+The main computer clusters @ SimCenter include qbert and ts117. 
+Make sure the software that you want to use has been pre-installed (ask Dr. Ethan Hereth) on the cluster that you want to run job at. 
 
 As the thumb rule, do not run any job on the head node, which may interfere other users usage or delay the whole system.
 
@@ -97,7 +98,7 @@ $cmd
 
 ######
 
-then
+submit the job using
 
 $ qsub my.jobs.pbs
 
