@@ -36,6 +36,10 @@ as well. However, the symbol “&” request a job run at background, such that 
 
 $ exit
 
+To check the status of jobs on qbert, use
+
+$ top
+
 2. The ts117 (172.16.117.1) cluster is relatively big, which comprises 1036 cores distributed on 37 nodes, 
 each node contains one GPU and 27 CPUs. Ts117 is also designed for advantages of the GPU computing. 
 PS, Ts-117 is a newly discovered element (Tennessine, element number of 117) in the halogen main group, 
