@@ -22,7 +22,7 @@ or a multi-core run (<= 16 cores), e.g., molecular dynamics simulation using NAM
 $ /apps/namd/NAMD_2.12_Linux-x86-64/charmmrun +p16 /apps/namd/NAMD_2.12_Linux-x86-64/namd2 my.script.conf > my.script.log &
 
 To make it simpler, you add one line in the ~/.bashrc file
-Alias namd=”/apps/namd/NAMD_2.12_Linux-x86-64/charmmrun +p16 /apps/namd/NAMD_2.12_Linux-x86-64/namd2”
+alias namd=”/apps/namd/NAMD_2.12_Linux-x86-64/charmmrun +p16 /apps/namd/NAMD_2.12_Linux-x86-64/namd2”
 
 Such that you only need to recall it using
 
