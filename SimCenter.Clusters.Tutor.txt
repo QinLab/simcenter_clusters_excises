@@ -1,11 +1,14 @@
 Running Jobs on SimCenter Clusters			Hao-Bo Guo, 5-8-18
 
 The main computer clusters @ SimCenter include qbert and ts117. 
-Make sure the software that you want to use has been pre-installed (ask Dr. Ethan Hereth) on the cluster that you want to run job at. 
+Make sure the software that you want to use has been pre-installed (ask Dr. Ethan Hereth) 
+on the cluster that you want to run job at. 
 
-As the thumb rule, do not run any job on the head node, which may interfere other users usage or delay the whole system.
+As the thumb rule, do not run any job on the head node, which may interfere other users 
+or delay the whole system.
 
-1. The qbert cluster (qbert.utc.edu) is relatively small, comprising 7 nodes, each of which has 16 CPU cores (a total of 112 cores). To run jobs on qbert, first login to the qbert
+1. The qbert cluster (qbert.utc.edu) is relatively small, comprising 7 nodes, each of which 
+has 16 CPU cores (a total of 112 cores). To run jobs on qbert, first login to the qbert
 
 $ ssh your.account@qbert.utc.edu
 
@@ -28,13 +31,19 @@ Such that you only need to recall it using
 
 $ namd my.script.conf > my.script.log &
 
-Note that if a job is running on the terminal, simply close the terminal will terminate the job as well. However, the symbol “&” request a job run at background, such that you may quit the terminal using 
+Note that if a job is running on the terminal, simply close the terminal will terminate the job 
+as well. However, the symbol “&” request a job run at background, such that you may quit the terminal using 
 
 $ exit
 
-2. The ts117 (172.16.117.1) cluster is relatively big, which comprises 1036 cores distributed on 37 nodes, each node contains one GPU and 27 CPUs. Ts117 is also designed for advantages of the GPU computing. PS, Ts-117 is a newly discovered element (Tennessine, element number of 117) in the halogen main group, which had been officially named in 2017 because Scientists in both University of Tennessee and Oak Ridge National Laboratory played key roles in its discovery.
+2. The ts117 (172.16.117.1) cluster is relatively big, which comprises 1036 cores distributed on 37 nodes, 
+each node contains one GPU and 27 CPUs. Ts117 is also designed for advantages of the GPU computing. 
+PS, Ts-117 is a newly discovered element (Tennessine, element number of 117) in the halogen main group, 
+which had been officially named in 2017 because Scientists in both University of Tennessee and 
+Oak Ridge National Laboratory played key roles in its discovery.
 
-Unlike qbert, the username and password of ts117 is the same as that you have on SimCenter computers. To login ts117, use
+Unlike qbert, the username and password of ts117 is the same as that you have on SimCenter computers. 
+To login ts117, use
 
 $ ssh your.account@172.16.117.1
 
@@ -78,7 +87,9 @@ On the terminal, you can submit the job using
 
 $ qsub my.test.pbs
 
-If you have a serious of different jobs, there is a simple way to group submit them. For example, there are 100 R jobs, instead of only 1. First, these jobs can be named as my.jobs.R.1, my.jobs.R.2, ..., my.jobs.R.100, then a pbs script "my.jobs.pbs" can be written as
+If you have a serious of different jobs, there is a simple way to group submit them. 
+For example, there are 100 R jobs, instead of only 1. First, these jobs can be named as 
+my.jobs.R.1, my.jobs.R.2, ..., my.jobs.R.100, then a pbs script "my.jobs.pbs" can be written as
 
 ######
 
@@ -108,6 +119,8 @@ In the case GPU facilities are requested, make sure to add this line in the pbs 
 
 module load cuda80/toolkit/8.0.44
 
-For multi-core jobs, and when GPU's are request, the core numbers should be equal to the node number multiplied by 27 (there are 28 total cores per node, but the GPU core should be set aside for communication).
+For multi-core jobs, and when GPU's are request, the core numbers should be equal to the node number 
+multiplied by 27 (there are 28 total cores per node, but the GPU core should be set aside for communication).
 
-After submitting the job, you can exit the terminal without killing the jobs, and can go back to check the status using qstat or qstatus etc.
+After submitting the job, you can exit the terminal without killing the jobs, and can go back to check 
+the status using qstat or qstatus etc.
