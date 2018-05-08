@@ -91,7 +91,7 @@ On the terminal, you can submit the job using
 
 $ qsub my.test.pbs
 
-If you have a serious of different jobs, there is a simple way to group submit them. 
+If you have multiple jobs, there is a simple way to group submit them. 
 For example, there are 100 R jobs, instead of only 1. First, these jobs can be named as 
 my.jobs.R.1, my.jobs.R.2, ..., my.jobs.R.100, then a pbs script "my.jobs.pbs" can be written as
 
