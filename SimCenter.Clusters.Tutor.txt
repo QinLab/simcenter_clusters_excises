@@ -5,7 +5,7 @@ Make sure the software that you want to use has been pre-installed (ask Dr. Etha
 
 As the thumb rule, do not run any job on the head node, which may interfere other users usage or delay the whole system.
 
-1. The qbert cluster (qbert.utc.edu) is relatively comprising 7 nodes, each of which has 16 CPU cores (a total of 112 cores). To run jobs on qbert, first login to the qbert
+1. The qbert cluster (qbert.utc.edu) is relatively small, comprising 7 nodes, each of which has 16 CPU cores (a total of 112 cores). To run jobs on qbert, first login to the qbert
 
 $ ssh your.account@qbert.utc.edu
 
