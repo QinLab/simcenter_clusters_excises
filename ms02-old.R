@@ -11,10 +11,10 @@ permute.pairs.wo.selfpairs = function( inpairs,  ncycles=10, debug=1 ) {
     longids = sample(longids)
     len = length(inpairs[,1])
     newpairs = data.frame( cbind( longids[1:len], longids[(len+1): (2*len)]) )
-    names(newpairs) = c('id1', 'id2')
-    newpairs$id1 = as.character( newpairs$id1)
-    newpairs$id2 = as.character( newpairs$id2)    
-    newpairs$selfpairs = ifelse( newpairs$id1 == newpairs$id2, 1, 0 )
+    names(newpairs) = c('geneA', 'geneB')
+    newpairs$geneA = as.character( newpairs$geneA)
+    newpairs$geneB = as.character( newpairs$geneB)    
+    newpairs$selfpairs = ifelse( newpairs$geneA == newpairs$geneB, 1, 0 )
     self.tb = newpairs[ newpairs$selfpairs==1, ]
     nonself.tb = newpairs[newpairs$selfpairs==0, ]
     if(debug) {
@@ -44,29 +44,6 @@ permute.pairs.wo.selfpairs = function( inpairs,  ncycles=10, debug=1 ) {
   }
 }
 
-#net = read.table("repeat.tab")
-#write.table(pairs, "merged_PPIGIN_2014Jan20.tab", quote=F, row.names=F, col.names=F, sep='\t')
-net = read.table( "mito.tab", header=F, sep="\t", colClass = c("character", "character") )
-head(net)
-if(debug==9) { 
-  #net = read.table('pair.tab',header=F) 
- net = net[1:90000,]
-}
-
-
-#net.ms02 = permute.pairs.wo.selfpairs( net  )
-#write.csv(net.ms02, "ms02/net2.csv")
-
-#do they have the same degree?
-#t1 = table(c(net[,1],net[,2]))
-#t2 = table(c(net.ms02[,1],net.ms02[,2]))
-#comp <- t1 == t2
-#table(comp)
-#tf = comp[comp==F]; tf
-#t1[names(tf)[1]]
-#t1[names(tf)]
-#t2[names(tf)]
-
 ##
 #R -f file --args start end
 options(echo=TRUE) # if you want see commands in output file
@@ -82,13 +59,24 @@ debug = 9
 #list.files()
 #source('network.r')
 
-net = read.table( "mito.tab", header=F, sep="\t", colClasses = c("character", "character") )
+net = read.table( "mito.csv", header=T, sep=",", colClasses = c("character", "character") )
 head(net)
 
 for( i in start:end) {
  net.ms02 = permute.pairs.wo.selfpairs( net )
  cmnd = paste( "mkdir ms02/", i, sep="")
  system( cmnd )
- outputname = paste( 'ms02/', i, '/', "ms02_",i,".tab", sep="")
- write.table(net.ms02, outputname, quote=F, row.names=F, sep="\t")
+ outputname = paste( 'ms02/', i, '/', "ms02_",i,".csv", sep="")
+ write.table(net.ms02, outputname, quote=F, row.names=F, sep=",")
 }
+
+#do they have the same degree?
+#t1 = table(c(net[,1],net[,2]))
+#t2 = table(c(net.ms02[,1],net.ms02[,2]))
+#comp <- t1 == t2
+#table(comp)
+#tf = comp[comp==F]; tf
+#t1[names(tf)[1]]
+#t1[names(tf)]
+#t2[names(tf)]
+
