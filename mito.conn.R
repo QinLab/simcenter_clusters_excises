@@ -16,7 +16,7 @@ matchb <- which(geneB %in% orf)
 # i.e., matcha[match2] will give the locations of ORFs in geneA that has been included in the set
 match2 <- which (matcha %in% matchb)
 
-pair <- c("geneA","geneB","connA","connB")
+pair <- c("geneA","geneB","connA","connB", "physical.conn")
 
 for (i in 1:length(match2)) {
     a0 <- as.numeric(match2[i])
@@ -27,7 +27,8 @@ for (i in 1:length(match2)) {
     connA <- conn[t]
     s <- which(orf %in% geneB[a1])
     connB <- conn[s]
-    pair = rbind(pair,c(linkA,linkB,connA,connB))
+    phys.connectivity <- round(sqrt(connA * connB),3)
+    pair = rbind(pair,c(linkA,linkB,connA,connB,phys.connectivity))
 }
 
 write.table(pair,file="mito.by.conn.csv",sep=",",row.names=F,col.names=F)
