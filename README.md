@@ -8,17 +8,17 @@ $ module load sge
 $ pbs *.pbs
 
 ## sample PBS
--bash-4.2$ cat ts_yeastPIN_job1.pbs  
-#!/bin/bash -l 
-#$ -S /bin/bash 
-#$ -N yPIN.Dang.001.col4 
-#$ -cwd 
-. /etc/profile.d/modules.sh 
-module load shared 
-module load R/3.4.3 
-cmd="R -f yeast_Zscore_GO-DangCR.R" 
-$cmd 
-
+-bash-4.2$ cat ts_yeastPIN_job1.pbs  <br>
+#!/bin/bash -l  <br>
+#$ -S /bin/bash <br>
+#$ -N yPIN.Dang.001.col4  <br>
+#$ -cwd  <br>
+. /etc/profile.d/modules.sh  <br>
+module load shared <br>
+module load R/3.4.3 <br> 
+cmd="R -f yeast_Zscore_GO-DangCR.R" <br> 
+$cmd  <br>
+<br> 
 
 # QBERT job runs
 
