@@ -1,7 +1,7 @@
-# simcenter_clusters_excises
+# Simcenter_clusters_excises
 Tutorials and training excises for using simcenter clusters
 
-# Ts117 job runs
+# ts117 job runs
 ssh user@ts.simcenter.utc.edu
 
 $ module load sge
