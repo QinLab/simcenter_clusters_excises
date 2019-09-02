@@ -5,7 +5,14 @@ Tutorials and training excises for using simcenter clusters
 ssh user@ts.simcenter.utc.edu
 
 $ module load sge
-$ pbs *.pbs
+$ qsub *.pbs
+
+HaoboGuo: You can also use <br> 
+$ qavail #For available cores <br> 
+$ qatatus -all #For checking status of running jobs, etc. <br> 
+
+If you are using GPU and hope the entire node is used for your job (1 GPU+27CPU), you can use <br> 
+$ qsub -excl=true job.pbs <br> 
 
 ## sample PBS
 -bash-4.2$ cat ts_yeastPIN_job1.pbs  <br>
