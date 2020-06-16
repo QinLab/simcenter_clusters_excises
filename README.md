@@ -38,7 +38,8 @@ module load shared <br>
 cmd=" somecommand $SGE_TASK_ID " <br> 
 $cmd <br> 
 
-## sample PBS for Python Anaconda
+## sample PBS for Python Anaconda (Enviroment 'grib' is Hong Qin's enviroment for PyGRIB
+
 #!/bin/bash -l <br>
 #$ -S /bin/bash <br> 
 #$ -N somejobs <br>
@@ -46,7 +47,7 @@ $cmd <br>
 . /etc/profile.d/modules.sh <br> 
 module load shared <br> 
 module load anaconda <br> 
-source activate grib <br>  #load an enviroment 'grib' is Hong Qin's enviroment for PyGRIB
+source activate grib  
 cmd=" somecommand " <br> 
 $cmd <br> 
 
