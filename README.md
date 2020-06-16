@@ -4,7 +4,7 @@ Tutorials and training excises for using simcenter clusters
 # ts117 job runs
 ssh user@ts.simcenter.utc.edu
 
-$ module load sge
+$ module load sge <br>
 $ qsub *.pbs
 
 HaoboGuo: You can also use <br> 
