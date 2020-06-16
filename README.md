@@ -27,7 +27,7 @@ cmd="R -f yeast_Zscore_GO-DangCR.R" <br>
 $cmd  <br>
 <br> 
 
-#### sample PBS with taks ID
+## sample PBS with taks ID
 #!/bin/bash -l <br>
 #$ -S /bin/bash <br> 
 #$ -N somejobs <br>
