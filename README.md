@@ -27,6 +27,20 @@ cmd="R -f yeast_Zscore_GO-DangCR.R" <br>
 $cmd  <br>
 <br> 
 
+#### sample PBS with taks ID
+#!/bin/bash -l <br>
+#$ -S /bin/bash <br> 
+#$ -N somejobs <br>
+#$ -cwd <br> 
+#$ -t 1-100 <br> 
+. /etc/profile.d/modules.sh <br> 
+module load shared <br> 
+module load anaconda <br> 
+source activate grib <br> 
+cmd=" somecommand $SGE_TASK_ID " <br> 
+$cmd <br> 
+
+####
 # QBERT job runs
 todo here 
 
